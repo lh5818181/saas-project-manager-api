@@ -8,3 +8,8 @@ export const signupSchema = z.object({
     .regex(/[A-Z]/, "A senha deve conter pelo menos uma letra maiúscula")
     .regex(/[0-9]/, "A senha deve conter pelo menos um número"),
 });
+
+export const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string(),
+});
