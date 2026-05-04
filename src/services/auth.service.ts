@@ -35,7 +35,37 @@ export class AuthService {
       }
     });
 
+// Geração do Token de Verificação (JWT de 24 horas)
+    const verificationToken = jwtService.sign(
+      { userId: user.id, type: 'VERIFICATION' },
+      process.env.JWT_SECRET!,
+      { expiresIn: '24h' }
+    );
+
+  // No futuro, aqui chamaremos: await mailProvider.send(user.email, verificationToken)
+    console.log(`\n📧 [EMAIL SIMULATOR] Para: ${user.email}`);
+    console.log(`🔗 Link: http://localhost:3333/api/auth/verify?token=${verificationToken}\n`);
+
     return user;
+  }
+
+  async verifyEmail(token: string) {
+    try {
+      const decoded = jwtService.verify(token, process.env.JWT_SECRET!) as { userId: string, type: string };
+
+      if (decoded.type !== 'VERIFICATION') {
+        throw new Error("Token inválido.");
+      }
+
+      await prisma.user.update({
+        where: { id: decoded.userId },
+        data: { emailVerified: new Date() }
+      });
+
+      return { message: "E-mail verificado com sucesso!" };
+    } catch (error) {
+      throw new Error("Token expirado ou inválido.");
+    }
   }
 
 

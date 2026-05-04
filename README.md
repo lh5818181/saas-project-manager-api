@@ -17,8 +17,21 @@ API robusta para gerenciamento de projetos e tarefas (Kanban), construída com N
 4. Rode as migrações: `npx prisma migrate dev`.
 5. Inicie o servidor: `npm run dev`.
 
-## 📌 Funcionalidades Implementadas
-- [x] Configuração de ambiente e Docker.
-- [x] Cadastro de usuários (Signup) com senha criptografada.
-- [x] Autenticação de usuários (Login) com emissão de JWT.
-- [ ] Middleware de proteção de rotas (Próximo passo).
+## 🚀 Funcionalidades Implementadas (Fase 1)
+
+- **Autenticação Segura:**
+  - [x] Registro de usuários com senhas criptografadas (Bcrypt).
+  - [x] Login com geração de Access Token (JWT) e Refresh Token.
+  - [x] Verificação de e-mail via link único (Simulado via console).
+  - [x] Logout funcional para sinalização ao cliente.
+- **Segurança e Validação:**
+  - [x] Validação de dados de entrada com Zod.
+  - [x] Middleware de Autenticação para proteção de rotas.
+  - [x] Middleware de Verificação para exigir e-mail validado.
+- **Banco de Dados:**
+  - [x] Modelagem completa via Prisma (User, Project, Task, Member, etc).
+
+## 🛠️ Próximos Passos
+- [ ] CRUD de Projetos (Criação, Listagem, Edição e Exclusão).
+- [ ] Gerenciamento de Membros e Permissões.
+- [ ] Quadro Kanban (Tarefas e Status).
