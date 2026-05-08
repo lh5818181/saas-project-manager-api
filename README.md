@@ -31,7 +31,7 @@ API robusta para gerenciamento de projetos e tarefas (Kanban), construída com N
 - **Banco de Dados:**
   - [x] Modelagem completa via Prisma (User, Project, Task, Member, etc).
 
-## 🛠️ Próximos Passos
-- [ ] CRUD de Projetos (Criação, Listagem, Edição e Exclusão).
-- [ ] Gerenciamento de Membros e Permissões.
-- [ ] Quadro Kanban (Tarefas e Status).
+- **Gerenciamento de Projetos (CRUD):**
+  - [x] Criação de projetos vinculados ao usuário.
+  - [x] Listagem apenas de projetos onde o usuário é dono ou membro.
+  - [x] Edição e Exclusão protegidas (apenas o dono pode realizar).
