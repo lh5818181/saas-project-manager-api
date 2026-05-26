@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { prisma } from './config/database';
 import authRoutes from './routes/auth.routes';
 import projectRoutes from './routes/project.routes';
+import taskRoutes from './routes/task.routes';
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.get('/health', async (req, res) => {
 });
 
 app.use('/api/projects', projectRoutes);
+
+app.use('/api/tasks', taskRoutes);
 
 const PORT = process.env.PORT || 3333;
 
