@@ -35,3 +35,10 @@ API robusta para gerenciamento de projetos e tarefas (Kanban), construída com N
   - [x] Criação de projetos vinculados ao usuário.
   - [x] Listagem apenas de projetos onde o usuário é dono ou membro.
   - [x] Edição e Exclusão protegidas (apenas o dono pode realizar).
+
+- **Gerenciamento de Tarefas & Status Kanban:**
+  - [x] Criação de tarefas vinculadas a um projeto específico.
+  - [x] Listagem de todas as tarefas pertencentes a um projeto.
+  - [x] Atualização dinâmica de tarefas (mudança de título, descrição e prioridade).
+  - [x] Movimentação de status no Kanban (simulação de fluxo de *Todo* para *Doing*/*Done*).
+  - [x] Exclusão completa de tarefas do projeto.
